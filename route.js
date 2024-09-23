@@ -38,8 +38,7 @@ router.use('/Add_Product',upload.single('photo'),(req,res)=>
 
 router.get('/Product_list',(req,res)=>
 {
-      res.render('Products')
-      res.end()
+    obj_prd.Fetch_Products(req,res)
 })
 
 
