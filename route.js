@@ -41,5 +41,10 @@ router.get('/Product_list',(req,res)=>
     obj_prd.Fetch_Products(req,res)
 })
 
+router.post('/update_records1',(req,res)=>
+{
+    obj_prd.Buy_Products(req,res)
+})
+
 
 module.exports=router

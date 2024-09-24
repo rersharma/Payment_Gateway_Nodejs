@@ -68,7 +68,12 @@ class Product
       } 
       Buy_Products(req,res)
       {
-
+             const Product_id=req.body.id
+             const product_name=req.body.name
+             const product_price=req.body.price 
+             const quantity=req.body.quantity
+             const total=req.body.total
+             res.render('checkout',{final_amount:total,product_id:Product_id,ProductName:product_name,quantity:quantity})
       } 
 
 }
