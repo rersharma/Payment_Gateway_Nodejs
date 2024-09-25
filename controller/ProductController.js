@@ -76,8 +76,15 @@ class Product
              res.render('checkout',{final_amount:total,product_id:Product_id,ProductName:product_name,quantity:quantity})
       } 
 
-}
 
+
+Status(req,res)
+{
+      const message=req.query.status;
+      res.render('Payment',{message:message})
+      res.end()
+}
+}
 
 const obj=new Product()
 module.exports=obj

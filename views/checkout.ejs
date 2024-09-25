@@ -30,7 +30,10 @@
         ></script>
         <script>
 
-
+      function resultMessage(message)
+      {
+          window.location.href=`http://localhost:3456/success?status=${message}`;
+      }
 window.paypal
     .Buttons({
         style: {
@@ -57,6 +60,7 @@ window.paypal
                             {
                                 id:parseInt(document.getElementById('pid').value),
                                 quantity:parseInt(document.getElementById('quantity').value),
+                                finalamount:parseInt(document.getElementById('amount').value),
                             },
                         ],
                     }),
@@ -120,8 +124,7 @@ window.paypal
                         orderData?.purchase_units?.[0]?.payments
                             ?.authorizations?.[0];
                     resultMessage(
-                        `Transaction ${transaction.status}: ${transaction.id}<br>
-          <br>See console for all available details`
+                        `Transaction ${transaction.status}: ${transaction.id}`
                     );
                     console.log(
                         "Capture result",

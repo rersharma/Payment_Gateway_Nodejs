@@ -46,5 +46,10 @@ router.post('/update_records1',(req,res)=>
     obj_prd.Buy_Products(req,res)
 })
 
+router.get('/success',(req,res)=>
+{
+    obj_prd.Status(req,res)
+})
+
 
 module.exports=router

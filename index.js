@@ -6,8 +6,8 @@ app.set('view engine','ejs')
 app.use('/static',express.static(__dirname+'/static'))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
-const PAYPAL_CLIENT_ID="ARJ1iY";
-const PAYPAL_CLIENT_SECRET="EFVz";
+const PAYPAL_CLIENT_ID="ARJ1iYYRsW";
+const PAYPAL_CLIENT_SECRET="EFVzBC7xe1";
 const base = "https://api-m.sandbox.paypal.com";
 async function generateAccessToken() {
       // To base64 encode your client id and secret using NodeJs
@@ -65,8 +65,9 @@ async function generateAccessToken() {
               {
                   amount: {
                       currency_code: "USD",
-                      value: "100",
+                      value: cart[0].finalamount,
                   },
+                  description:`Product Id ${cart[0].id} and Total Quantity ${cart[0].quantity} and Product Name Xyz`
               },
           ],
       };
